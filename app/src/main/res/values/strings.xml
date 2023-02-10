@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">BankTask</string>
+    <string name="enter_bin_iin">Enter the first digits of a card number (BIN/IIN)</string>
+
+    <string name="scheme_network">SCHEME / NETWORK</string>
+    <string name="type">TYPE</string>
+    <string name="bank">BANK</string>
+    <string name="brand">BRAND</string>
+    <string name="prepaid">PREPAID</string>
+    <string name="card_number">CARD NUMBER</string>
+    <string name="length">LENGTH</string>
+    <string name="luhn">LUHN</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="issue">\?</string>
+    <string name="country">COUNTRY</string>
+    <string name="latitude_part">(latitude: </string>
+    <string name="longitude_part">, longitude: </string>
+    <string name="closing_bracket">)</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="debit">Debit</string>
+    <string name="credit">Credit</string>
+    <string name="slash">&#160;/&#160;</string>
+
+    <string name="debit_small">debit</string>
+    <string name="credit_small">credit</string>
+</resources>
