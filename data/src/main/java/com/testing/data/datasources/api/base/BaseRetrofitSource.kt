@@ -1,6 +1,7 @@
 package com.testing.data.datasources.api.base
 
 import com.testing.domain.GeneralResponse
+import com.testing.utils.NoInternetException
 import org.json.JSONObject
 import retrofit2.HttpException
 import retrofit2.Response
@@ -8,6 +9,13 @@ import java.io.IOException
 
 open class BaseRetrofitSource {
 
+    /**
+     * Map network and parse exceptions into in-app exceptions.
+     * @throws HttpException
+     * @throws NoInternetException
+     * @throws IOException
+     * @throws Exception
+     */
     protected suspend fun <T> wrapRetrofitException(block: suspend () -> Response<T>): GeneralResponse<T> {
         return try {
             val response = block()
@@ -16,13 +24,12 @@ open class BaseRetrofitSource {
             fetchJsonMessage(e) { message, code ->
                 GeneralResponse.Error(message, code)
             }
+        } catch (e: NoInternetException) {
+            GeneralResponse.Error("Check internet access!", null)
         } catch (e: IOException) {
             GeneralResponse.Error("Server connection error!", null)
         } catch (e: Exception) {
-            GeneralResponse.Error(
-                "An unexpected error has occurred! Please try again later.",
-                null
-            )
+            GeneralResponse.Error("An unexpected error has occurred! Please try again later.", null)
         }
     }
 

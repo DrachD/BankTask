@@ -35,6 +35,7 @@ dependencies {
 
     implementation project(path: ':common')
     implementation project(path: ':domain')
+    implementation project(path: ':utils')
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

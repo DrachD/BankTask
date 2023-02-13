@@ -137,7 +137,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         )
         mainViewModel.addSearchHistory(searchHistoryData)
 
-        
+
 
         mainViewModel.fetchAllSearchHistory().observe(viewLifecycleOwner) {
             adapter.submitList(it)
@@ -145,9 +145,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun observeGetBankCustomerEvent() = mainViewModel.getBankCustomerEntity
-        .observe(viewLifecycleOwner) { bankCutomerEntity ->
+        .observe(viewLifecycleOwner) { bankCustomerEntity ->
 
-            if (bankCutomerEntity == null) {
+            if (bankCustomerEntity == null) {
                 binding.schemeTextView.setTextColor(resources.getBaseColor(R.color.default_text, null))
                 binding.brandTextView.setTextColor(resources.getBaseColor(R.color.default_text, null))
                 binding.lengthTextView.setTextColor(resources.getBaseColor(R.color.default_text, null))
@@ -179,74 +179,74 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 return@observe
             }
 
-            binding.schemeTextView.text = bankCutomerEntity.scheme?.let {
+            binding.schemeTextView.text = bankCustomerEntity.scheme?.let {
                 binding.schemeTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.scheme
+                bankCustomerEntity.scheme
             } ?: "?"
 
-            binding.brandTextView.text = bankCutomerEntity.brand?.let {
+            binding.brandTextView.text = bankCustomerEntity.brand?.let {
                 binding.brandTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.brand
+                bankCustomerEntity.brand
             } ?: "?"
 
-            binding.lengthTextView.text = bankCutomerEntity.number?.length?.let {
+            binding.lengthTextView.text = bankCustomerEntity.number?.length?.let {
                 binding.lengthTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.number?.length.toString()
+                bankCustomerEntity.number?.length.toString()
             } ?: "?"
 
-            binding.latitudeTextView.text = bankCutomerEntity.country?.latitude?.let {
+            binding.latitudeTextView.text = bankCustomerEntity.country?.latitude?.let {
                 binding.latitudeTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.country?.latitude.toString()
+                bankCustomerEntity.country?.latitude.toString()
             } ?: "?"
 
-            binding.longitudeTextView.text = bankCutomerEntity.country?.longitude?.let {
+            binding.longitudeTextView.text = bankCustomerEntity.country?.longitude?.let {
                 binding.longitudeTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.country?.longitude.toString()
+                bankCustomerEntity.country?.longitude.toString()
             } ?: "?"
 
-            binding.emojiTextView.text = bankCutomerEntity.country?.emoji?.let {
+            binding.emojiTextView.text = bankCustomerEntity.country?.emoji?.let {
                 binding.emojiTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.country?.emoji.toString()
+                bankCustomerEntity.country?.emoji.toString()
             } ?: "?"
 
-            binding.countryTextView.text = bankCutomerEntity.country?.name?.let {
+            binding.countryTextView.text = bankCustomerEntity.country?.name?.let {
                 binding.countryTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.country?.name.toString()
+                bankCustomerEntity.country?.name.toString()
             } ?: ""
 
-            binding.bankNameTextView.text = bankCutomerEntity.bank?.name?.let {
+            binding.bankNameTextView.text = bankCustomerEntity.bank?.name?.let {
                 binding.bankNameTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.bank?.name.toString()
+                bankCustomerEntity.bank?.name.toString()
             } ?: "?"
 
-            binding.bankUrlTextView.text = bankCutomerEntity.bank?.url?.let {
+            binding.bankUrlTextView.text = bankCustomerEntity.bank?.url?.let {
                 binding.bankUrlTextView.setTextColor(Color.BLUE)
-                bankCutomerEntity.bank?.url.toString()
+                bankCustomerEntity.bank?.url.toString()
             } ?: "?"
 
-            binding.bankPhoneTextView.text = bankCutomerEntity.bank?.phone?.let {
+            binding.bankPhoneTextView.text = bankCustomerEntity.bank?.phone?.let {
                 binding.bankPhoneTextView.setTextColor(Color.BLACK)
-                bankCutomerEntity.bank?.phone.toString()
+                bankCustomerEntity.bank?.phone.toString()
             } ?: "?"
 
-            bankCutomerEntity.number?.luhn?.let {
-                if (bankCutomerEntity.number?.luhn == true) {
+            bankCustomerEntity.number?.luhn?.let {
+                if (bankCustomerEntity.number?.luhn == true) {
                     binding.luhnYesTextView.setTextColor(Color.BLACK)
                 } else {
                     binding.luhnNoTextView.setTextColor(Color.BLACK)
                 }
             }
 
-            bankCutomerEntity.type?.let {
-                if (bankCutomerEntity.type == resources.getString(R.string.debit)) {
+            bankCustomerEntity.type?.let {
+                if (bankCustomerEntity.type == resources.getString(R.string.debit)) {
                     binding.debitTextView.setTextColor(Color.BLACK)
                 } else {
                     binding.creditTextView.setTextColor(Color.BLACK)
                 }
             }
 
-            bankCutomerEntity.prepaid?.let {
-                if (bankCutomerEntity.prepaid == true) {
+            bankCustomerEntity.prepaid?.let {
+                if (bankCustomerEntity.prepaid == true) {
                     binding.prepaidYesTextView.setTextColor(Color.BLACK)
                 } else {
                     binding.prepaidNoTextView.setTextColor(Color.BLACK)

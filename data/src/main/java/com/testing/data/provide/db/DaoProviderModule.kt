@@ -11,6 +11,9 @@ import javax.inject.Singleton
 @Module
 object DaoProviderModule {
 
+    /**
+     * Create an instance of Room database.
+     */
     @Singleton
     @Provides
     fun bankDatabase(context: Context): BankDatabase {

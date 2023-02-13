@@ -85,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_begin="185dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -297,7 +297,6 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@android:color/tab_indicator_text"
-            app:layout_constraintBottom_toBottomOf="@id/emojiTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/emojiTextView"
             app:layout_constraintTop_toTopOf="@id/emojiTextView"
@@ -311,7 +310,7 @@
             android:textColor="@android:color/tab_indicator_text"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@id/emojiTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/countryTextView" />
 
         <TextView
             android:id="@+id/latitudeTextView"
