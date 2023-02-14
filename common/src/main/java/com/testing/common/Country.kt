@@ -1,11 +1,19 @@
 package com.testing.common
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
 data class Country(
-    val alpha2: String?,
-    val currency: String?,
+    @SerializedName("emoji")
+    @Expose
     val emoji: String?,
+    @SerializedName("latitude")
+    @Expose
     val latitude: Int?,
+    @SerializedName("longitude")
+    @Expose
     val longitude: Int?,
-    val name: String?,
-    val numeric: String?
+    @SerializedName("name")
+    @Expose
+    val name: String?
 )
